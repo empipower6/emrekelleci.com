@@ -1,0 +1,120 @@
+.aboutSection {
+  width: 100%;
+  padding-top: 2vw;
+  padding-bottom: 10vw;
+  z-index: 1;
+  position: relative;
+  background-color: black;
+  .sectionInfo {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 3vw;
+    .leftSide,
+    .rightSide {
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+      .sectionName {
+        color: white;
+        font-family: Helvetica, sans-serif;
+        font-size: 1vw;
+        font-weight: 100;
+      }
+    }
+  }
+  .bigDescription {
+    color: #808285;
+    font-family: Helvetica, sans-serif;
+    font-size: 5vw;
+    padding: 0;
+    margin-top: -1vw;
+    margin-left: -0.3vw;
+
+    p {
+      margin: 0;
+      padding: 0;
+      span {
+        color: #e6e7e8;
+      }
+    }
+  }
+}
+
+.dividedDesciptions {
+  display: flex;
+  justify-content: space-between;
+  grid-gap: 3vw;
+  .leftSide,
+  .rightSide {
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-size: 1vw;
+    font-weight: 100;
+    padding: 0;
+    margin-top: -0.1vw;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .leftSide {
+    width: 35%;
+  }
+  .rightSide {
+    width: 48.5%;
+    p {
+      padding-bottom: 1vw;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .aboutSection {
+    .sectionInfo {
+      .leftSide,
+      .rightSide {
+        .sectionName {
+          font-size: 3vw;
+        }
+      }
+    }
+  }
+
+  .dividedDesciptions {
+    .leftSide,
+    .rightSide {
+      color: white;
+      font-family: Helvetica, sans-serif;
+      font-size: 2.3vw;
+      font-weight: 100;
+      padding: 0;
+      margin-top: -0.1vw;
+    }
+  }
+}
+
+@media screen and (min-width: 450px) and (max-width: 900px) {
+    .aboutSection {
+        .sectionInfo {
+          .leftSide,
+          .rightSide {
+            .sectionName {
+              font-size: 2vw;
+            }
+          }
+        }
+      }
+    
+      .dividedDesciptions {
+        .leftSide,
+        .rightSide {
+          color: white;
+          font-family: Helvetica, sans-serif;
+          font-size: 1.5vw;
+          font-weight: 100;
+          padding: 0;
+          margin-top: -0.1vw;
+        }
+      }
+}

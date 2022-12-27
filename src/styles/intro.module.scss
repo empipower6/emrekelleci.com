@@ -1,0 +1,109 @@
+.introSection {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height:100vh;
+
+  .title {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    color: white;
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    z-index:1;
+    background-color:black;
+    grid-template-columns: repeat(12, auto);
+
+    .titleItem {
+      line-height: 14vw;
+      font-size: 12vw;
+      text-align: left;
+      .name{
+        margin-left:-1vw;
+      }
+      .lastName{
+        margin-right:-.8vw;
+      }
+    }
+    .titleItem.rightAlign{
+      text-align:right;
+    }
+  }
+  .introBottom {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 3vw;
+  width: 100%;
+  height: 5vh;
+  z-index:1;
+  background-color:black;
+  .leftSide,
+  .rightSide {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+
+    .menuItem {
+      color: white;
+      font-family: Helvetica, sans-serif;
+      font-weight: 100;
+      font-size:1vw;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .menu {
+    
+    height: 4vh;
+    justify-content: center;
+
+    .leftSide,
+    .rightSide {
+      align-items: center;
+  
+      .menuItem {
+        color: white;
+        font-family: Helvetica, sans-serif;
+        font-weight: 100;
+        font-size:3vw;
+      }
+    }
+  }
+}
+
+@media screen and (min-width:450px) and (max-width: 900px) {
+  .menu {
+    
+    height: 4vh;
+    justify-content: center;
+
+    .leftSide,
+    .rightSide {
+      align-items: center;
+  
+      .menuItem {
+        color: white;
+        font-family: Helvetica, sans-serif;
+        font-weight: 100;
+        font-size:2vw;
+      }
+    }
+  }
+}
