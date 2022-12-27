@@ -6,7 +6,6 @@ import Experience from "../components/experience";
 import Layout from "../components/layout";
 import { graphql } from "gatsby";
 const HomePage = ({ data }: { data: any }) => {
-  console.log(data.allContentfulAboutSection.nodes[0]);
   return (
     <Layout>
       <Intro />
