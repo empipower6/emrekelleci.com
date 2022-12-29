@@ -69,9 +69,13 @@
 }
 
 @media screen and (max-width: 450px) {
+  .introSection{
+    height: 100vh;  
+    max-height: -webkit-fill-available;
+  }
   .menu {
     
-    height: 4vh;
+    height: 10vh;
     justify-content: center;
 
     .leftSide,
@@ -79,9 +83,6 @@
       align-items: center;
   
       .menuItem {
-        color: white;
-        font-family: Helvetica, sans-serif;
-        font-weight: 100;
         font-size:3vw;
       }
     }
@@ -99,9 +100,6 @@
       align-items: center;
   
       .menuItem {
-        color: white;
-        font-family: Helvetica, sans-serif;
-        font-weight: 100;
         font-size:2vw;
       }
     }
