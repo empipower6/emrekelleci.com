@@ -1,3 +1,118 @@
-.experienceSection{
-    display:none;
+.sectionInfo {
+  display: flex;
+  justify-content: flex-start;
+  .sectionName {
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-size: 1vw;
+    font-weight: 100;
+  }
+}
+
+.experienceSection {
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .leftSide,
+  .rightSide {
+    width: 50%;
+    height: 100%;
+    margin-top: -1vw;
+  }
+  .leftSide {
+    .currentJob {
+      font-size: 5vw;
+      font-weight: 500;
+      margin: 0;
+      padding: 0;
+      color: white;
+      font-family: Helvetica, sans-serif;
+    }
+  }
+  .rightSide {
+    width: 48.5%;
+    .workExperience,
+    .education,
+    .skills {
+        margin-bottom:15px;
+      .experienceTitle {
+        border-bottom: 1px solid white;
+        font-size: 5vw;
+        font-weight: 500;
+        margin: 0;
+        padding: 0;
+        color: white;
+        font-family: Helvetica, sans-serif;
+      }
+    }
+    .workExperience {
+      .workExperienceItem {
+        display: flex;
+        flex-flow: column nowrap;
+        padding-top: 15px;
+
+        .firstRow,
+        .secondRow,
+        .thirdRow {
+          color: white;
+          font-family: Helvetica, sans-serif;
+          font-size: 1vw;
+          font-weight: 100;
+          margin: 0;
+          padding: 0;
+        }
+        .secondRow {
+          display: flex;
+          padding: 2px 0;
+          .companyLink,
+          .secondRowText {
+            color: white;
+            font-family: Helvetica, sans-serif;
+            font-size: 1vw;
+            font-weight: 100;
+            margin: 0;
+            padding: 0;
+          }
+          .companyLink {
+            cursor: pointer;
+          }
+        }
+        .thirdRow {
+          ul {
+            margin: 0;
+            padding: 0;
+            padding-left: 1vw;
+            li {
+              padding: 4px 0;
+              p {
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    .education {
+      .educationItem {
+        display: flex;
+        flex-flow: column nowrap;
+        padding-top: 15px;
+        .row {
+          color: white;
+          font-family: Helvetica, sans-serif;
+          font-size: 1vw;
+          font-weight: 100;
+          margin: 0;
+          padding: 0;
+        }
+        .middleRow {
+          padding: 2px 0;
+        }
+      }
+    }
+  }
 }

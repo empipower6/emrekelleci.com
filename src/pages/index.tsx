@@ -43,14 +43,13 @@ const HomePage = ({ data }: { data: any }) => {
           }
         />
         <Experience
-          leftDesc={
-            data.allContentfulAboutSection.nodes[0].descriptionOnTheLeft
+          education={
+            data.allContentfulEducation.nodes
           }
-          rightDesc={
-            data.allContentfulAboutSection.nodes[0].descriptionOnTheRightSide
+          work={
+            data.allContentfulWorkExperience.nodes
           }
-          jobTitle={""}
-          bigDesc={undefined}
+          
         />
       </Layout>
     </>
@@ -73,6 +72,30 @@ export const query = graphql`
           raw
         }
         jobTitle
+      }
+    }
+    allContentfulWorkExperience(sort: {orderInTheWebsite: DESC}) {
+      nodes {
+        companyName
+        companyUrl
+        fromDate
+        jobTitle
+        location
+        orderInTheWebsite
+        toDate
+        listOfResponsabilities {
+          raw
+        }
+      }
+    }
+    allContentfulEducation(sort: {websiteOrder: DESC}) {
+      nodes {
+        fromDate
+        location
+        nameOfEducation
+        nameOfUniversity
+        toDate
+        websiteOrder
       }
     }
   }

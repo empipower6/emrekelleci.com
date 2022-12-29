@@ -28,16 +28,71 @@ const options = {
   },
 };
 type Props = {
-  jobTitle: string;
-  bigDesc: any;
-  leftDesc: any;
-  rightDesc: any;
+  education: any;
+  work: any;
 };
-const Experience = ({ leftDesc, rightDesc }: Props) => {
+const Experience = ({ education, work }: Props) => {
+  console.log(education);
+
   return (
-    <div className={styles.experienceSection}>
-      
-    </div>
+    <>
+      <div className={styles.sectionInfo}>
+        <p className={styles.sectionName}>Experience</p>
+      </div>
+      <div className={styles.experienceSection}>
+        <div className={styles.leftSide}>
+          <h2 className={styles.currentJob}> {work[0].jobTitle}</h2>
+        </div>
+        <div className={styles.rightSide}>
+          <div className={styles.workExperience}>
+            <h3 className={styles.experienceTitle}> Work Experience </h3>
+            {work.map((item: any, index: number) => (
+              <div className={styles.workExperienceItem} key={`workexperience-${index}`}>
+                <p className={styles.firstRow}>
+                  <strong>{item.jobTitle}</strong> &nbsp;{item.fromDate} - {item.toDate}
+                </p>
+                <div className={styles.secondRow}>
+                  {item.companyUrl ? (
+                    <>
+                      <a className={styles.companyLink} href={item.companyUrl} title={`Visit ${item.companyName}`}>
+                        {item.companyName}
+                      </a>
+                      <p className={styles.secondRowText}>
+                        {" "}
+                        &nbsp;{item.location}
+                      </p>
+                    </>
+                  ) : (
+                    <p className={styles.secondRowText}>
+                      {item.companyName} {item.location}
+                    </p>
+                  )}
+                </div>
+                <div className={styles.thirdRow}>
+                  {item.listOfResponsabilities &&
+                    renderRichText(item.listOfResponsabilities, options)}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className={styles.education}>
+            <h3 className={styles.experienceTitle}> Education </h3>
+            {
+              education.map((item:any,index:number)=>(
+                <div className={styles.educationItem} key={`education-${index}`}>
+                  <p className={styles.row}><strong>{item.nameOfEducation}</strong> &nbsp; {item.fromDate} - {item.toDate}</p>
+                  <p className={styles.row}>{item.nameOfUniversity}</p>
+                  <p className={styles.row}>{item.location}</p>
+                </div>
+              ))
+            }
+          </div>
+          <div className={styles.skills}>
+            <h3 className={styles.experienceTitle}> Skills </h3>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

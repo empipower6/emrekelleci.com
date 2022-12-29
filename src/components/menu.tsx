@@ -6,7 +6,7 @@ function Menu() {
     <div className={styles.menu}>
       <div className={styles.leftSide}>
         <a className={styles.menuItem}>About </a>
-        <a className={styles.menuItem}>Work Experience </a>
+        <a className={styles.menuItem}>Experience </a>
       </div>
       <div className={styles.rightSide}>
         <a className={styles.menuItem}>Contact Me </a>
