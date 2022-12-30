@@ -30,10 +30,9 @@ const options = {
 type Props = {
   education: any;
   work: any;
+  skills: any;
 };
-const Experience = ({ education, work }: Props) => {
-  console.log(education);
-
+const Experience = ({ education, work, skills }: Props) => {
   return (
     <>
       <div className={styles.sectionInfo}>
@@ -47,26 +46,33 @@ const Experience = ({ education, work }: Props) => {
           <div className={styles.workExperience}>
             <h3 className={styles.experienceTitle}> Work Experience </h3>
             {work.map((item: any, index: number) => (
-              <div className={styles.workExperienceItem} key={`workexperience-${index}`}>
+              <div
+                className={styles.workExperienceItem}
+                key={`workexperience-${index}`}
+              >
                 <p className={styles.firstRow}>
-                  <strong>{item.jobTitle}</strong> &nbsp;{item.fromDate} - {item.toDate}
+                  <span>
+                    <strong>{item.jobTitle}</strong>
+                  </span>
+                  <span className={styles.dates}>
+                    {item.fromDate} - {item.toDate}
+                  </span>
                 </p>
                 <div className={styles.secondRow}>
                   {item.companyUrl ? (
                     <>
-                      <a className={styles.companyLink} href={item.companyUrl} title={`Visit ${item.companyName}`}>
+                      <a
+                        className={styles.companyLink}
+                        href={item.companyUrl}
+                        title={`Visit ${item.companyName}`}
+                      >
                         {item.companyName}
                       </a>
-                      <p className={styles.secondRowText}>
-                        {" "}
-                        &nbsp;{item.location}
-                      </p>
                     </>
                   ) : (
-                    <p className={styles.secondRowText}>
-                      {item.companyName} {item.location}
-                    </p>
+                    <p className={styles.secondRowText}> {item.companyName}</p>
                   )}
+                  <p className={styles.secondRowText}>{item.location}</p>
                 </div>
                 <div className={styles.thirdRow}>
                   {item.listOfResponsabilities &&
@@ -77,18 +83,30 @@ const Experience = ({ education, work }: Props) => {
           </div>
           <div className={styles.education}>
             <h3 className={styles.experienceTitle}> Education </h3>
-            {
-              education.map((item:any,index:number)=>(
-                <div className={styles.educationItem} key={`education-${index}`}>
-                  <p className={styles.row}><strong>{item.nameOfEducation}</strong> &nbsp; {item.fromDate} - {item.toDate}</p>
-                  <p className={styles.row}>{item.nameOfUniversity}</p>
-                  <p className={styles.row}>{item.location}</p>
-                </div>
-              ))
-            }
+            {education.map((item: any, index: number) => (
+              <div className={styles.educationItem} key={`education-${index}`}>
+                <p className={`${styles.row} ${styles.educationFirstRow}`}>
+                  <span>
+                    <strong>{item.nameOfEducation}</strong>
+                  </span>
+                  <span className={styles.dates}>
+                    {item.fromDate}- {item.toDate}
+                  </span>
+                </p>
+                <p className={`${styles.row} ${styles.middleRow}`}>
+                  {item.nameOfUniversity}
+                </p>
+                <p className={styles.row}>{item.location}</p>
+              </div>
+            ))}
           </div>
           <div className={styles.skills}>
             <h3 className={styles.experienceTitle}> Skills </h3>
+            <div className={styles.skillsDisplay}>
+              {skills.map((skill:any, index:number) => (
+                <p className={styles.skill}>- {skill.skillsName}</p>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -49,7 +49,9 @@ const HomePage = ({ data }: { data: any }) => {
           work={
             data.allContentfulWorkExperience.nodes
           }
-          
+          skills={
+            data.allContentfulAllSkills.nodes[0].skillReference
+          }
         />
       </Layout>
     </>
@@ -96,6 +98,13 @@ export const query = graphql`
         nameOfUniversity
         toDate
         websiteOrder
+      }
+    }
+    allContentfulAllSkills {
+      nodes {
+        skillReference {
+          skillsName
+        }
       }
     }
   }
