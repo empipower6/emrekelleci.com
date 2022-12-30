@@ -3,6 +3,7 @@ import * as styles from "../styles/layout.module.scss";
 import Intro from "../components/intro";
 import About from "../components/about";
 import Experience from "../components/experience";
+import Contact from "../components/contact";
 import Layout from "../components/layout";
 import { graphql } from "gatsby";
 export const Head = () => (
@@ -53,6 +54,7 @@ const HomePage = ({ data }: { data: any }) => {
             data.allContentfulAllSkills.nodes[0].skillReference
           }
         />
+        <Contact contactData={data.allContentfulContactUsSection.nodes} />
       </Layout>
     </>
   );
@@ -105,6 +107,14 @@ export const query = graphql`
         skillReference {
           skillsName
         }
+      }
+    }
+    allContentfulContactUsSection {
+      nodes {
+        instagram
+        email
+        github
+        linkedin
       }
     }
   }

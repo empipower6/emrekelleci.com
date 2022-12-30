@@ -1,0 +1,111 @@
+.sectionInfo {
+  display: flex;
+  justify-content: flex-start;
+  border-top: 1px solid white;
+  position: relative;
+  z-index: 1;
+  background-color: black;
+  .sectionName {
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-size: 1vw;
+    font-weight: 100;
+  }
+}
+
+.contactSection {
+  width: 100%;
+  .emailSection {
+    z-index: 1;
+    position: relative;
+    background-color: black;
+    padding-bottom: 3vw;
+    .emailAnchor {
+      color: white;
+      font-family: Helvetica, sans-serif;
+      font-size: 9vw;
+      text-decoration: none;
+      display: flex;
+      flex-flow: column nowrap;
+      line-height: 8.5vw;
+      .grey {
+        color: #808285;
+      }
+    }
+  }
+}
+
+.otherLinks {
+  display: flex;
+  justify-content: flex-end;
+
+  .column {
+    width: 48.5%;
+    display: flex;
+    flex-flow: column nowrap;
+    .anchorLink {
+      color: white;
+      font-family: Helvetica, sans-serif;
+      font-size: 4vw;
+      text-decoration: none;
+      cursor: pointer;
+      margin: 0;
+      padding: 0;
+      line-height: 4vw;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .sectionInfo {
+    .sectionName {
+      font-size: 3vw;
+      margin-bottom:3vw;
+    }
+  }
+
+  .contactSection {
+    .emailSection {
+      .emailAnchor {
+        font-size: 12vw;
+        line-height: 11.5vw;
+      }
+    }
+  }
+
+  .otherLinks {
+    .column {
+      padding-top:3vw;
+      .anchorLink {
+        font-size: 7vw;
+        line-height: 7.5vw;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 450px) and (max-width: 900px) {
+  .sectionInfo {
+    .sectionName {
+      font-size: 2vw;
+      margin-bottom:2vw;
+    }
+  }
+  .contactSection {
+    .emailSection {
+      .emailAnchor {
+        font-size: 70px;
+        line-height: 80px;
+      }
+    }
+  }
+
+  .otherLinks {
+    .column {
+      .anchorLink {
+        font-size: 33px;
+        line-height: 40px;
+      }
+    }
+  }
+}

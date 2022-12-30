@@ -5,6 +5,8 @@
   margin: 0;
   padding: 0;
   height:100vh;
+  perspective: 1500px;
+
 
   .title {
     position: absolute;
@@ -20,7 +22,7 @@
     grid-template-columns: repeat(12, auto);
 
     .titleItem {
-      line-height: 14vw;
+      line-height: 16vw;
       font-size: 12vw;
       text-align: left;
       .name{

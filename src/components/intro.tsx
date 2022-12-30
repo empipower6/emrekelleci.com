@@ -1,10 +1,33 @@
 import * as React from "react";
 import * as styles from "../styles/intro.module.scss";
 import Menu from "./menu";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useEffect, useLayoutEffect, useRef } from "react";
 const Intro = () => {
+  gsap.registerPlugin(ScrollTrigger);
+  const titleRef = useRef(null);
+  const introRef = useRef(null);
+  useLayoutEffect(() => {
+    ScrollTrigger.create({
+      trigger: introRef.current,
+      pin: true,
+      start: "top top",
+      end: "+=200%",
+    });
+    gsap.to(titleRef.current, {
+      scrollTrigger: {
+        scrub: true,
+        start: "top top",
+        end: "+=200%",
+      },
+      top: `67%`,
+    });
+    gsap.fromTo(titleRef.current, { opacity: 0 }, { opacity: 1, duration: 2 });
+  }, []);
   return (
-    <div className={styles.introSection}>
-      <h1 className={styles.title} style={{ top: `20vw` }}>
+    <div className={styles.introSection} ref={introRef}>
+      <h1 className={styles.title} style={{ top: `0%` }} ref={titleRef}>
         <span className={styles.titleItem}>
           <span className={styles.name}>E</span>
         </span>
