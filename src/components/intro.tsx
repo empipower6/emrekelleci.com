@@ -3,27 +3,29 @@ import * as styles from "../styles/intro.module.scss";
 import Menu from "./menu";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useEffect, useLayoutEffect, useRef } from "react";
+import {  useLayoutEffect, useRef } from "react";
+import { isMobile } from "react-device-detect";
 const Intro = () => {
   gsap.registerPlugin(ScrollTrigger);
   const titleRef = useRef(null);
   const introRef = useRef(null);
   useLayoutEffect(() => {
-    ScrollTrigger.create({
-      trigger: introRef.current,
-      pin: true,
-      start: "top top",
-      end: "+=200%",
-    });
-    gsap.to(titleRef.current, {
-      scrollTrigger: {
-        scrub: true,
+    if (!isMobile) {
+      ScrollTrigger.create({
+        trigger: introRef.current,
+        pin: true,
         start: "top top",
         end: "+=200%",
-      },
-      top: `67%`,
-    });
-    gsap.fromTo(titleRef.current, { opacity: 0 }, { opacity: 1, duration: 2 });
+      });
+      gsap.to(titleRef.current, {
+        scrollTrigger: {
+          scrub: true,
+          start: "top top",
+          end: "+=200%",
+        },
+        top: `67%`,
+      });
+    }
   }, []);
   return (
     <div className={styles.introSection} ref={introRef}>

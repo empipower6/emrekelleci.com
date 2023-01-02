@@ -104,7 +104,7 @@ const Experience = ({ education, work, skills }: Props) => {
             <h3 className={styles.experienceTitle}> Skills </h3>
             <div className={styles.skillsDisplay}>
               {skills.map((skill:any, index:number) => (
-                <p className={styles.skill}>- {skill.skillsName}</p>
+                <p className={styles.skill} key={`skills-${index}`}>- {skill.skillsName}</p>
               ))}
             </div>
           </div>

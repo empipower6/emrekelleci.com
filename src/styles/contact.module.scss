@@ -52,6 +52,12 @@
       margin: 0;
       padding: 0;
       line-height: 4vw;
+      transition: color 0.5s ease;
+
+      &:hover{
+        color: #808285;
+        transition: color 0.5s ease;
+      }
     }
   }
 }

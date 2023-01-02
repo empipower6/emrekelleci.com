@@ -22,7 +22,7 @@
     grid-template-columns: repeat(12, auto);
 
     .titleItem {
-      line-height: 16vw;
+      line-height: 15vw;
       font-size: 12vw;
       text-align: left;
       .name{
@@ -38,7 +38,7 @@
   }
   .introBottom {
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     left: 0;
     width: 100%;
   }
@@ -66,6 +66,7 @@
       font-family: Helvetica, sans-serif;
       font-weight: 100;
       font-size:1vw;
+      cursor:pointer;
     }
   }
 }

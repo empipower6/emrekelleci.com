@@ -5,6 +5,8 @@ import About from "../components/about";
 import Experience from "../components/experience";
 import Contact from "../components/contact";
 import Layout from "../components/layout";
+import Projects from "../components/projects/projects";
+
 import { graphql } from "gatsby";
 export const Head = () => (
   <>
@@ -55,6 +57,7 @@ const HomePage = ({ data }: { data: any }) => {
           }
         />
         <Contact contactData={data.allContentfulContactUsSection.nodes} />
+        <Projects projects={data.allContentfulWebsiteProject.nodes} />
       </Layout>
     </>
   );
@@ -115,6 +118,19 @@ export const query = graphql`
         email
         github
         linkedin
+      }
+    }
+    allContentfulWebsiteProject(sort: {order: ASC}) {
+      nodes {
+        description {
+          raw
+        }
+        projectName
+        url
+        technologies
+        websiteSnippet {
+          gatsbyImageData(aspectRatio: 1.5, layout: CONSTRAINED, placeholder: BLURRED)
+        }
       }
     }
   }

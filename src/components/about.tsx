@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as styles from "../styles/about.module.scss";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
-import { renderRichText } from "gatsby-source-contentful/rich-text";
+import { ContentfulRichTextGatsbyReference, renderRichText, RenderRichTextData } from "gatsby-source-contentful/rich-text";
 
 const Bold = ({ children }: { children: any }) => (
   <span className="bold">{children}</span>
@@ -29,9 +29,9 @@ const options = {
 };
 type Props = {
   jobTitle: string;
-  bigDesc: any;
-  leftDesc: any;
-  rightDesc: any;
+  bigDesc: RenderRichTextData<ContentfulRichTextGatsbyReference>;
+  leftDesc: RenderRichTextData<ContentfulRichTextGatsbyReference>;
+  rightDesc: RenderRichTextData<ContentfulRichTextGatsbyReference>;
 };
 const About = ({ jobTitle, bigDesc, leftDesc, rightDesc }: Props) => {
   return (
