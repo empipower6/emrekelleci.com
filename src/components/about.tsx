@@ -32,11 +32,12 @@ type Props = {
   bigDesc: RenderRichTextData<ContentfulRichTextGatsbyReference>;
   leftDesc: RenderRichTextData<ContentfulRichTextGatsbyReference>;
   rightDesc: RenderRichTextData<ContentfulRichTextGatsbyReference>;
+  scrollRef: any;
 };
-const About = ({ jobTitle, bigDesc, leftDesc, rightDesc }: Props) => {
+const About = ({ jobTitle, bigDesc, leftDesc, rightDesc,scrollRef }: Props) => {
   return (
     <>
-      <div className={styles.aboutSection}>
+      <div className={styles.aboutSection} ref={scrollRef}>
         <div className={styles.sectionInfo}>
           <div className={styles.leftSide}>
             <p className={styles.sectionName}>About</p>

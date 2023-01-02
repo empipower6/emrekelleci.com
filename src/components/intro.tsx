@@ -3,9 +3,15 @@ import * as styles from "../styles/intro.module.scss";
 import Menu from "./menu";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import {  useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { isMobile } from "react-device-detect";
-const Intro = () => {
+type Props = {
+  aboutLoc: any;
+  expLoc: any;
+  contactLoc: any;
+  projectsLoc: any;
+};
+const Intro = ({ aboutLoc, expLoc, contactLoc, projectsLoc }: Props) => {
   gsap.registerPlugin(ScrollTrigger);
   const titleRef = useRef(null);
   const introRef = useRef(null);
@@ -69,7 +75,7 @@ const Intro = () => {
       </h1>
       {/* <div className={styles.animations}></div> */}
       <div className={styles.introBottom}>
-        <Menu />
+        <Menu aboutRef={aboutLoc} expRef={expLoc} contactRef={contactLoc} projectsRef={projectsLoc} />
       </div>
     </div>
   );

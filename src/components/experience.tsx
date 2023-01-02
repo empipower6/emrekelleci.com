@@ -31,11 +31,12 @@ type Props = {
   education: any;
   work: any;
   skills: any;
+  scrollRef:any;
 };
-const Experience = ({ education, work, skills }: Props) => {
+const Experience = ({ education, work, skills,scrollRef}: Props) => {
   return (
     <>
-      <div className={styles.sectionInfo}>
+      <div className={styles.sectionInfo} ref={scrollRef}>
         <p className={styles.sectionName}>Experience</p>
       </div>
       <div className={styles.experienceSection}>

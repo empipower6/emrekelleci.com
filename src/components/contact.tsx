@@ -5,11 +5,12 @@ type Props = {
   contactData: [
     { email: string; github: string; instagram: string; linkedin: string }
   ];
+  scrollRef: any;
 };
-function Contact({ contactData }: Props) {
+function Contact({ contactData, scrollRef }: Props) {
   return (
     <>
-      <div className={styles.sectionInfo}>
+      <div className={styles.sectionInfo} ref={scrollRef}>
         <p className={styles.sectionName}>Contact Me</p>
       </div>
       <div className={styles.contactSection}>

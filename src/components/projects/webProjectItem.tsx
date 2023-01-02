@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import * as styles from "../../styles/projects.module.scss";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import {
@@ -60,7 +60,6 @@ function WebProjectItem({
       },
     },
   };
-  console.log(index);
   return (
     <button
       onClick={(e) => {

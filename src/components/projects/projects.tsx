@@ -1,4 +1,7 @@
-import { RenderRichTextData, ContentfulRichTextGatsbyReference } from "gatsby-source-contentful/rich-text";
+import {
+  RenderRichTextData,
+  ContentfulRichTextGatsbyReference,
+} from "gatsby-source-contentful/rich-text";
 import React from "react";
 import * as styles from "../../styles/projects.module.scss";
 import WebProjectItem from "./webProjectItem";
@@ -13,11 +16,12 @@ type Props = {
       websiteSnippet: any;
     }
   ];
+  scrollRef: any;
 };
-function Projects({ projects }: Props) {
+function Projects({ projects, scrollRef }: Props) {
   return (
     <>
-      <div className={styles.sectionInfo}>
+      <div className={styles.sectionInfo} ref={scrollRef}>
         <p className={styles.sectionName}>Projects</p>
       </div>
       <div className={styles.projectsSection}>

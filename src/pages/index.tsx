@@ -8,33 +8,31 @@ import Layout from "../components/layout";
 import Projects from "../components/projects/projects";
 
 import { graphql } from "gatsby";
+import { useRef } from "react";
 export const Head = () => (
   <>
     <title>Emre Kelleci</title>
     <meta name="description" content="Emre Kelleci's Website" />
     <meta name="keywords" content="Web Developer, Emre Kelleci, Full Stack" />
     <meta property="og:title" content="Emre Kelleci" />
-    <meta
-      property="og:description"
-      content="Emre Kelleci's Website"
-    />
+    <meta property="og:description" content="Emre Kelleci's Website" />
     {/* <meta
       property="og:image"
       content="https://assets.rabbitsreviews.com/images/rr-logo/00-default/OGLogo.png"
     /> */}
-    <meta
-      property="og:url"
-      name="title"
-      content="www.emrekelleci.com"
-    />
-    <link rel="canonical" href="www.emrekelleci.com" />
+    <meta property="og:url" name="title" content="https://emrekelleci.com/" />
+    <link rel="canonical" href="https://emrekelleci.com/" />
   </>
 );
 const HomePage = ({ data }: { data: any }) => {
+  const aboutRef = useRef(null);
+  const expRef = useRef(null);
+  const contactRef = useRef(null);
+  const projectsRef = useRef(null);
   return (
     <>
       <Layout>
-        <Intro />
+        <Intro aboutLoc={aboutRef} expLoc={expRef} contactLoc={contactRef} projectsLoc={projectsRef} />
         <About
           jobTitle={data.allContentfulAboutSection.nodes[0].jobTitle}
           bigDesc={data.allContentfulAboutSection.nodes[0].bigDescription}
@@ -44,20 +42,22 @@ const HomePage = ({ data }: { data: any }) => {
           rightDesc={
             data.allContentfulAboutSection.nodes[0].descriptionOnTheRightSide
           }
+          scrollRef={aboutRef}
         />
         <Experience
-          education={
-            data.allContentfulEducation.nodes
-          }
-          work={
-            data.allContentfulWorkExperience.nodes
-          }
-          skills={
-            data.allContentfulAllSkills.nodes[0].skillReference
-          }
+          education={data.allContentfulEducation.nodes}
+          work={data.allContentfulWorkExperience.nodes}
+          skills={data.allContentfulAllSkills.nodes[0].skillReference}
+          scrollRef={expRef}
         />
-        <Contact contactData={data.allContentfulContactUsSection.nodes} />
-        <Projects projects={data.allContentfulWebsiteProject.nodes} />
+        <Contact
+          contactData={data.allContentfulContactUsSection.nodes}
+          scrollRef={contactRef}
+        />
+        <Projects
+          projects={data.allContentfulWebsiteProject.nodes}
+          scrollRef={projectsRef}
+        />
       </Layout>
     </>
   );
@@ -81,7 +81,7 @@ export const query = graphql`
         jobTitle
       }
     }
-    allContentfulWorkExperience(sort: {orderInTheWebsite: DESC}) {
+    allContentfulWorkExperience(sort: { orderInTheWebsite: DESC }) {
       nodes {
         companyName
         companyUrl
@@ -95,7 +95,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulEducation(sort: {websiteOrder: DESC}) {
+    allContentfulEducation(sort: { websiteOrder: DESC }) {
       nodes {
         fromDate
         location
@@ -120,7 +120,7 @@ export const query = graphql`
         linkedin
       }
     }
-    allContentfulWebsiteProject(sort: {order: ASC}) {
+    allContentfulWebsiteProject(sort: { order: ASC }) {
       nodes {
         description {
           raw
@@ -129,7 +129,11 @@ export const query = graphql`
         url
         technologies
         websiteSnippet {
-          gatsbyImageData(aspectRatio: 1.5, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(
+            aspectRatio: 1.5
+            layout: CONSTRAINED
+            placeholder: BLURRED
+          )
         }
       }
     }
