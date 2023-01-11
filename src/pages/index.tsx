@@ -56,6 +56,7 @@ const HomePage = ({ data }: { data: any }) => {
         />
         <Projects
           projects={data.allContentfulWebsiteProject.nodes}
+          artworks={data.allInstagramContent.nodes}
           scrollRef={projectsRef}
         />
       </Layout>
@@ -134,6 +135,24 @@ export const query = graphql`
             layout: CONSTRAINED
             placeholder: BLURRED
           )
+        }
+      }
+    }
+    allInstagramContent(filter: {media_type: {eq: "VIDEO"}}, limit: 10)  {
+      nodes {
+        media_url
+        media_type
+        permalink
+        caption
+        thumbnail_url
+        localImage {
+          childImageSharp {
+            gatsbyImageData(
+              aspectRatio: 1
+              layout: CONSTRAINED
+              placeholder: BLURRED
+            )
+          }
         }
       }
     }

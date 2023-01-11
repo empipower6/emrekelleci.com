@@ -28,6 +28,9 @@
     padding-top: 20px;
   }
 }
+.projectsSection.secondSection{
+  padding-top:150px;
+}
 .firstItem.webProjectItem,.firstItem.openWebProjectItem{
   border-top: 1px solid white;
 
@@ -55,8 +58,6 @@
     text-align: left;
 
     .text,
-    .plusSign,
-    .minusSign,
     .desc p,
     .closedDesc p,
     .techs,
@@ -66,17 +67,6 @@
       font-size: 1vw;
       font-weight: 100;
       margin: 0;
-    }
-    .plusSign {
-      font-size: 2vw;
-      padding-right: 1%;
-    }
-    .minusSign {
-      font-size: 3vw;
-      padding-right: 1.5%;
-    }
-    .mobileSign {
-      display: none;
     }
     .techs {
       padding: 10px 0;
@@ -111,6 +101,9 @@
   .left {
     justify-content: space-between;
     padding-left: 1%;
+    .mobileSign{
+      display:none;
+    }
     p {
       margin: 0;
       padding: 0;
@@ -154,8 +147,6 @@
       text-align: left;
 
       .text,
-      .plusSign,
-      .minusSign,
       .desc p,
       .closedDesc p,
       .techs,
@@ -170,10 +161,6 @@
       .text{
         display:flex;
         align-items: center;
-      }
-      .plusSign,
-      .minusSign {
-        display: none;
       }
       .techs {
         padding: 10px 0;
@@ -248,23 +235,11 @@
       text-align: left;
 
       .text,
-      .plusSign,
-      .minusSign,
       .desc p,
       .closedDesc p,
       .techs,
       .visit {
         font-size: 13px;
-      }
-      .plusSign {
-        width: 5%;
-        font-size: 20px;
-        padding-right: 0.5%;
-      }
-      .minusSign {
-        width: 5%;
-        font-size: 30px;
-        padding-right: 0%;
       }
 
       .visit {

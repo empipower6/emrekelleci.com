@@ -7,6 +7,7 @@ import {
   RenderRichTextData,
 } from "gatsby-source-contentful/rich-text";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import Sign from "../svgs/sign";
 
 type Props = {
   title: string;
@@ -72,7 +73,7 @@ function WebProjectItem({
       <div className={styles.left}>
         <p className={styles.text}>
           <span className={styles.mobileSign}>{open ? " -" : " +"}</span>&nbsp;
-          {title}
+          {title.toLowerCase()}
         </p>
         <a
           className={styles.visit}
@@ -82,7 +83,7 @@ function WebProjectItem({
           target="_blank"
           rel="noopener noreferrer"
         >
-          Visit the Project
+          Visit
         </a>
       </div>
       <div className={styles.right}>
@@ -110,9 +111,9 @@ function WebProjectItem({
             ""
           )}
         </div>
-        <p className={open ? styles.minusSign : styles.plusSign}>
-          {open ? "-" : "+"}
-        </p>
+        <div className={styles.sign}>
+         <Sign isPlus={open? true : false} height="25px" />
+        </div>
       </div>
     </button>
   );
