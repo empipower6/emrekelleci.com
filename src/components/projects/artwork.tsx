@@ -104,6 +104,7 @@ function Artwork({ data, index, artProjectState, toggleProjects }: Props) {
             <div className={styles.image} ref={imageRef}>
               <GatsbyImage
                 image={projectImg}
+                loading="eager"
                 alt={`A snippet image for the project`}
               />
             </div>

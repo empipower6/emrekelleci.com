@@ -134,6 +134,7 @@ export const query = graphql`
             aspectRatio: 1.5
             layout: CONSTRAINED
             placeholder: BLURRED
+            width: 400
           )
         }
       }

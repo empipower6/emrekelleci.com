@@ -28,94 +28,99 @@
     padding-top: 20px;
   }
 }
-.projectsSection.secondSection{
-  padding-top:150px;
+.projectsSection.secondSection {
+  padding-top: 150px;
 }
-.firstItem.webProjectItem,.firstItem.openWebProjectItem{
+.firstItem.webProjectItem {
   border-top: 1px solid white;
-
 }
-.webProjectItem,
-.openWebProjectItem {
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid white;
+
+.projectWrapper {
   position: relative;
-  z-index: 1;
-  background-color: black;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 1s;
-  .left,
-  .right {
-    width: 49%;
-    align-items: center;
+
+  &:hover .hoverImage {
+    position: relative;
+    z-index: 99;
+    opacity:1;
+  }
+  .nonHovered {
+    opacity:0;
+  }
+  .webProjectItem {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid white;
+    position: relative;
+    z-index: 1;
+    background-color: black;
     display: flex;
-    text-align: left;
-
-    .text,
-    .desc p,
-    .closedDesc p,
-    .techs,
-    .visit {
-      color: white;
-      font-family: Helvetica, sans-serif;
-      font-size: 1vw;
-      font-weight: 100;
-      margin: 0;
-    }
-    .techs {
-      padding: 10px 0;
-    }
-    .visit {
-      font-weight: bold;
-      text-underline-offset: 2px;
-      padding-right: 2%;
-    }
-
-    .projectImage {
-      padding-top: 10px;
-    }
-  }
-  .right {
     justify-content: space-between;
-    .siteContent {
-      width: 100%;
-    }
-    .desc,
-    .projectImage {
-      width: 90%;
-      margin: 0;
-      padding: 0;
-    }
-    .closedDesc {
-      width: 80%;
-      margin: 0;
-      padding: 0;
-    }
-  }
-  .left {
-    justify-content: space-between;
-    padding-left: 1%;
-    .mobileSign{
-      display:none;
-    }
-    p {
-      margin: 0;
-      padding: 0;
-    }
-  }
-}
-.openWebProjectItem {
-  align-items: flex-start;
-
-  .left,
-  .right {
     align-items: flex-start;
+    padding: 10px 0;
+    overflow: hidden;
+    cursor: pointer;
+    height: 30px;
+    .left,
+    .right {
+      width: 49%;
+      align-items: flex-start;
+      display: flex;
+      text-align: left;
+      margin: 0;
+
+      .text,
+      .desc p,
+      .closedDesc p,
+      .techs,
+      .visit {
+        color: white;
+        font-family: Helvetica, sans-serif;
+        font-size: 1vw;
+        font-weight: 100;
+        margin: 0;
+        padding: 0;
+      }
+      .sign{
+        display:flex;
+        border:1px solid pink;
+        height:100%;
+      }
+      .techs {
+        padding: 40px 0 10px 0;
+      }
+      .visit {
+        font-weight: bold;
+        text-underline-offset: 2px;
+        padding-right: 2%;
+      }
+
+      .projectImage {
+        margin-top: 10px;
+      }
+    }
+    .right {
+      justify-content: space-between;
+      .siteContent {
+        width: 100%;
+      }
+      .desc,
+      .projectImage {
+        width: 90%;
+        margin: 0;
+        padding: 0;
+      }
+    }
+    .left {
+      justify-content: space-between;
+      padding-left: 1%;
+      .mobileSign {
+        display: none;
+      }
+      p {
+        margin: 0;
+        padding: 0;
+      }
+    }
   }
 }
 
@@ -132,8 +137,7 @@
     }
   }
 
-  .webProjectItem,
-  .openWebProjectItem {
+  .webProjectItem {
     display: flex;
     flex-flow: column;
     justify-content: space-between;
@@ -148,7 +152,6 @@
 
       .text,
       .desc p,
-      .closedDesc p,
       .techs,
       .visit,
       .mobileSign {
@@ -158,8 +161,9 @@
         font-weight: 100;
         margin: 0;
       }
-      .text{
-        display:flex;
+     
+      .text {
+        display: flex;
         align-items: center;
       }
       .techs {
@@ -189,9 +193,6 @@
         margin: 0;
         padding: 15px 0 0 0;
       }
-      .closedDesc {
-        display: none;
-      }
     }
     .left {
       justify-content: space-between;
@@ -200,14 +201,6 @@
         margin: 0;
         padding: 0;
       }
-    }
-  }
-  .openWebProjectItem {
-    align-items: flex-start;
-
-    .left,
-    .right {
-      align-items: flex-start;
     }
   }
 }
@@ -220,8 +213,7 @@
     }
   }
 
-  .webProjectItem,
-  .openWebProjectItem {
+  .webProjectItem {
     .left {
       display: flex;
       justify-content: space-between;
@@ -236,7 +228,6 @@
 
       .text,
       .desc p,
-      .closedDesc p,
       .techs,
       .visit {
         font-size: 13px;
