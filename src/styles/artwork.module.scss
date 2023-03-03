@@ -31,13 +31,13 @@
     .artContent {
       position: relative;
       width: 50%;
-      display:flex;
-      align-items:center;
+      display: flex;
+      align-items: center;
       .image {
         position: relative;
         padding: 1px 0;
         height: 100%;
-        width:auto;
+        width: auto;
         display: flex;
         justify-content: flex-start;
         z-index: 2;
@@ -60,6 +60,45 @@
     }
   }
 }
-.artwork.firstArtwork{
-  border-top:1px solid white;
+.artwork.firstArtwork {
+  border-top: 1px solid white;
+}
+
+@media screen and (max-width: 450px) {
+  .artwork {
+    padding: 10px 0;
+
+    .left,
+    .right {
+      font-size: 3vw;
+    }
+    .right {
+      justify-content: flex-end;
+      .artContent {
+        width: 100%;
+      }
+      .sign {
+        display: none;
+      }
+    }
+  }
+}
+@media screen and (min-width: 450px) and (max-width:900px){
+  .artwork {
+    padding: 10px 0;
+
+    .left,
+    .right {
+      font-size: 13px;
+    }
+    .right {
+      justify-content: flex-end;
+      .artContent {
+        width: 900%;
+      }
+      .sign {
+        display: none;
+      }
+    }
+  }
 }

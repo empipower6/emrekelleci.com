@@ -128,7 +128,7 @@ function Artwork({ data, index, artProjectState, toggleProjects }: Props) {
           )}
         </div>
         <div className={styles.sign}>
-          <Sign isPlus={artProjectState[index] ? true : false} height="25px" />
+          <Sign isPlus={artProjectState[index] ? true : false} height="20px" />
         </div>
       </div>
     </button>

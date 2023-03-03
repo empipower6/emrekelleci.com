@@ -90,10 +90,7 @@ function WebProjectItem({
         }`}
       >
         <div className={styles.left}>
-          <p className={styles.text}>
-            <span className={styles.mobileSign}>{open ? " -" : " +"}</span>
-            {title.toLowerCase()}
-          </p>
+          <p className={styles.text}>ssssssss{title.toLowerCase()}</p>
           <a
             className={styles.visit}
             ref={linkRef}
@@ -128,17 +125,17 @@ function WebProjectItem({
             )}
           </div>
           <div className={styles.sign}>
-            <Sign isPlus={open ? true : false} height="25px" />
+            <Sign isPlus={open ? true : false} height="20px" />
           </div>
         </div>
       </button>
-      {image && projectImg && !open ? (
+      {/* {image && projectImg && !open ? (
         <div className={hoverImage ? styles.hovered : styles.nonHovered}>
           <HoverImage title={title} image={projectImg} index={index} />
         </div>
       ) : (
         ""
-      )}
+      )} */}
     </div>
   );
 }

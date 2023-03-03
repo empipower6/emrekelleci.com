@@ -31,9 +31,9 @@ type Props = {
   education: any;
   work: any;
   skills: any;
-  scrollRef:any;
+  scrollRef: any;
 };
-const Experience = ({ education, work, skills,scrollRef}: Props) => {
+const Experience = ({ education, work, skills, scrollRef }: Props) => {
   return (
     <>
       <div className={styles.sectionInfo} ref={scrollRef}>
@@ -71,7 +71,7 @@ const Experience = ({ education, work, skills,scrollRef}: Props) => {
                       </a>
                     </>
                   ) : (
-                    <p className={styles.secondRowText}> {item.companyName}</p>
+                    <p className={styles.secondRowText}>{item.companyName}</p>
                   )}
                   <p className={styles.secondRowText}>{item.location}</p>
                 </div>
@@ -104,8 +104,10 @@ const Experience = ({ education, work, skills,scrollRef}: Props) => {
           <div className={styles.skills}>
             <h3 className={styles.experienceTitle}> Skills </h3>
             <div className={styles.skillsDisplay}>
-              {skills.map((skill:any, index:number) => (
-                <p className={styles.skill} key={`skills-${index}`}>- {skill.skillsName}</p>
+              {skills.map((skill: any, index: number) => (
+                <p className={styles.skill} key={`skills-${index}`}>
+                  - {skill.skillsName}
+                </p>
               ))}
             </div>
           </div>
