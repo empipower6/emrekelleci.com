@@ -90,7 +90,7 @@ function WebProjectItem({
         }`}
       >
         <div className={styles.left}>
-          <p className={styles.text}>ssssssss{title.toLowerCase()}</p>
+          <p className={styles.text}>{title.toLowerCase()}</p>
           <a
             className={styles.visit}
             ref={linkRef}
