@@ -4,7 +4,7 @@
   .sectionName {
     color: white;
     font-family: Helvetica, sans-serif;
-    font-size: 1vw;
+    font-size: 1.2vw;
     font-weight: 100;
   }
 }
@@ -21,7 +21,7 @@
   .rightSide {
     width: 50%;
     height: 100%;
-    margin-top: -1vw;
+    margin-top: -1.2vw;
   }
   .leftSide {
     .currentJob {
@@ -60,13 +60,23 @@
         .thirdRow {
           color: white;
           font-family: Helvetica, sans-serif;
-          font-size: 1vw;
+          font-size: 1.2vw;
           font-weight: 100;
           margin: 0;
           padding: 0;
+          .jobTitle {
+            font-size: 3vw;
+            font-weight: 100;
+          }
         }
-        .firstRow .dates {
+        .dates {
           padding-left: 5px;
+          color: white;
+          font-family: Helvetica, sans-serif;
+          font-size: 1.2vw;
+          font-weight: 100;
+          margin: 0;
+          padding: 0;
         }
         .secondRow {
           display: flex;
@@ -75,27 +85,31 @@
           .secondRowText {
             color: white;
             font-family: Helvetica, sans-serif;
-            font-size: 1vw;
+            font-size: 1.2vw;
             font-weight: 100;
             margin: 0;
             padding: 0;
           }
           .companyLink {
             cursor: pointer;
+            margin-right: 5px;
           }
           .secondRowText {
-            padding-left: 5px;
+            padding-left: 0;
           }
         }
         .thirdRow {
           ul {
             margin: 0;
             padding: 0;
-            padding-left: 1vw;
+            padding-left: 1.2vw;
             li {
               padding: 3px 0;
               p {
                 margin: 0;
+              }
+              &::marker {
+                color: orange;
               }
             }
           }
@@ -110,15 +124,22 @@
         .row {
           color: white;
           font-family: Helvetica, sans-serif;
-          font-size: 1vw;
+          font-size: 1.2vw;
           font-weight: 100;
           margin: 0;
           padding: 0;
         }
         .educationFirstRow {
-          .dates {
-            padding-left: 5px;
-          }
+          font-size: 3vw;
+          font-weight: 100;
+        }
+        .dates {
+          color: white;
+          font-family: Helvetica, sans-serif;
+          font-size: 1.2vw;
+          font-weight: 100;
+          padding: 0;
+          margin: 0;
         }
         .middleRow {
           padding: 2px 0;
@@ -130,14 +151,19 @@
         padding-top: 15px;
         display: flex;
         flex-flow: row wrap;
+        justify-content: space-between;
+        padding-left:2vw;
         .skill {
           color: white;
           font-family: Helvetica, sans-serif;
-          font-size: 1vw;
+          font-size: 1.2vw;
           font-weight: 100;
           margin: 0;
           padding: 2px 0;
-          width: 35%;
+          width: 45%;
+          &::marker {
+            color: orange;
+          }
         }
       }
     }
@@ -189,15 +215,15 @@
           }
           .firstRow,
           .thirdRow,
-          .firstRow .dates,
+          .dates,
           .secondRow .secondRowText,
           .secondRow .companyLink {
             margin: 0;
             padding: 0;
             font-size: 4vw;
           }
-          .secondRow {
-            margin-top: -2px;
+          .firstRow .jobTitle {
+            font-size: 8vw;
           }
 
           .thirdRow {
@@ -218,12 +244,11 @@
             padding: 0;
           }
           .educationFirstRow {
-            display: flex;
-            flex-flow: column nowrap;
-            .dates {
-              padding-left: 0;
-              font-size: 4vw;
-            }
+            font-size: 8vw;
+          }
+          .dates {
+            padding-left: 0;
+            font-size: 4vw;
           }
           .middleRow {
             padding: 2px 0;
@@ -233,8 +258,12 @@
       .skills {
         .skillsDisplay {
           padding-top: 10px;
+          flex-flow: column nowrap;
+          margin: 0;
+          padding-left: 5vw;
+
           .skill {
-            font-size: 4vw;
+            font-size: 5vw;
             padding: 2px 0;
             width: 100%;
           }
@@ -278,15 +307,18 @@
           }
           .firstRow,
           .thirdRow,
-          .firstRow .dates,
+          .dates,
           .secondRow .secondRowText,
           .secondRow .companyLink {
             margin: 0;
             padding: 0;
             font-size: 13px;
           }
-          .secondRow {
+          .secondRowText {
             margin-top: -2px;
+          }
+          .firstRow .jobTitle {
+            font-size: 3.5vw;
           }
 
           .thirdRow {
@@ -303,12 +335,11 @@
             font-size: 13px;
           }
           .educationFirstRow {
-            display: flex;
-            flex-flow: column nowrap;
-            .dates {
-              padding-left: 0;
-              font-size: 13px;
-            }
+            font-size: 3.5vw;
+          }
+          .dates {
+            padding-left: 0;
+            font-size: 13px;
           }
           .middleRow {
             margin-top: -1px;
@@ -319,8 +350,12 @@
       .skills {
         .skillsDisplay {
           padding-top: 10px;
+          flex-flow: column nowrap;
+          margin: 0;
+          padding-left: 3vw;
+
           .skill {
-            font-size: 13px;
+            font-size: 3vw;
             padding: 2px 0;
             width: 100%;
           }

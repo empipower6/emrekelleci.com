@@ -39,9 +39,6 @@ const HomePage = ({ data }: { data: any }) => {
           leftDesc={
             data.allContentfulAboutSection.nodes[0].descriptionOnTheLeft
           }
-          rightDesc={
-            data.allContentfulAboutSection.nodes[0].descriptionOnTheRightSide
-          }
           scrollRef={aboutRef}
         />
         <Experience
@@ -74,9 +71,6 @@ export const query = graphql`
           raw
         }
         descriptionOnTheLeft {
-          raw
-        }
-        descriptionOnTheRightSide {
           raw
         }
         jobTitle

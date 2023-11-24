@@ -41,7 +41,7 @@ const Experience = ({ education, work, skills, scrollRef }: Props) => {
       </div>
       <div className={styles.experienceSection}>
         <div className={styles.leftSide}>
-          <h2 className={styles.currentJob}> {work[0].jobTitle}</h2>
+          {/* <h2 className={styles.currentJob}> {work[0].jobTitle}</h2> */}
         </div>
         <div className={styles.rightSide}>
           <div className={styles.workExperience}>
@@ -52,17 +52,16 @@ const Experience = ({ education, work, skills, scrollRef }: Props) => {
                 key={`workexperience-${index}`}
               >
                 <p className={styles.firstRow}>
-                  <span>
-                    <strong>{item.jobTitle}</strong>
-                  </span>
-                  <span className={styles.dates}>
-                    {item.fromDate} - {item.toDate}
-                  </span>
+                  <span className={styles.jobTitle}>{item.jobTitle}</span>
+                </p>
+                <p className={styles.dates}>
+                  {item.fromDate} - {item.toDate}
                 </p>
                 <div className={styles.secondRow}>
-                  {item.companyUrl ? (
+                  {item.companyUrl && (
                     <>
                       <a
+                        target="_blank"
                         className={styles.companyLink}
                         href={item.companyUrl}
                         title={`Visit ${item.companyName}`}
@@ -70,9 +69,8 @@ const Experience = ({ education, work, skills, scrollRef }: Props) => {
                         {item.companyName}
                       </a>
                     </>
-                  ) : (
-                    <p className={styles.secondRowText}>{item.companyName}</p>
                   )}
+
                   <p className={styles.secondRowText}>{item.location}</p>
                 </div>
                 <div className={styles.thirdRow}>
@@ -87,12 +85,10 @@ const Experience = ({ education, work, skills, scrollRef }: Props) => {
             {education.map((item: any, index: number) => (
               <div className={styles.educationItem} key={`education-${index}`}>
                 <p className={`${styles.row} ${styles.educationFirstRow}`}>
-                  <span>
-                    <strong>{item.nameOfEducation}</strong>
-                  </span>
-                  <span className={styles.dates}>
-                    {item.fromDate}- {item.toDate}
-                  </span>
+                    {item.nameOfEducation}
+                </p>
+                <p className={styles.dates}>
+                  {item.fromDate}- {item.toDate}
                 </p>
                 <p className={`${styles.row} ${styles.middleRow}`}>
                   {item.nameOfUniversity}
@@ -103,13 +99,13 @@ const Experience = ({ education, work, skills, scrollRef }: Props) => {
           </div>
           <div className={styles.skills}>
             <h3 className={styles.experienceTitle}> Skills </h3>
-            <div className={styles.skillsDisplay}>
+            <ul className={styles.skillsDisplay}>
               {skills.map((skill: any, index: number) => (
-                <p className={styles.skill} key={`skills-${index}`}>
-                  - {skill.skillsName}
-                </p>
+                <li className={styles.skill} key={`skills-${index}`}>
+                  {skill.skillsName}
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </div>

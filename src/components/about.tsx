@@ -31,10 +31,9 @@ type Props = {
   jobTitle: string;
   bigDesc: RenderRichTextData<ContentfulRichTextGatsbyReference>;
   leftDesc: RenderRichTextData<ContentfulRichTextGatsbyReference>;
-  rightDesc: RenderRichTextData<ContentfulRichTextGatsbyReference>;
   scrollRef: any;
 };
-const About = ({ jobTitle, bigDesc, leftDesc, rightDesc,scrollRef }: Props) => {
+const About = ({ jobTitle, bigDesc, leftDesc,scrollRef }: Props) => {
   return (
     <>
       <div className={styles.aboutSection} ref={scrollRef}>
@@ -53,9 +52,6 @@ const About = ({ jobTitle, bigDesc, leftDesc, rightDesc,scrollRef }: Props) => {
       <div className={styles.dividedDesciptions}>
         <div className={styles.leftSide}>
           {bigDesc && renderRichText(leftDesc, options)}
-        </div>
-        <div className={styles.rightSide}>
-          {bigDesc && renderRichText(rightDesc, options)}
         </div>
       </div>
     </>
