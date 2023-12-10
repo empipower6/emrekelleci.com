@@ -3,8 +3,9 @@ import * as styles from "../styles/intro.module.scss";
 import Menu from "./menu";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { isMobile } from "react-device-detect";
+import LineContainer from "./projects/lineContainer";
 type Props = {
   aboutLoc: any;
   expLoc: any;
@@ -73,9 +74,20 @@ const Intro = ({ aboutLoc, expLoc, contactLoc, projectsLoc }: Props) => {
           <span className={styles.lastName}>I</span>
         </span>
       </h1>
-      {/* <div className={styles.animations}></div> */}
+      {isMobile ? (
+        ""
+      ) : (
+        <div className={styles.animations}>
+          <LineContainer />
+        </div>
+      )}
       <div className={styles.introBottom}>
-        <Menu aboutRef={aboutLoc} expRef={expLoc} contactRef={contactLoc} projectsRef={projectsLoc} />
+        <Menu
+          aboutRef={aboutLoc}
+          expRef={expLoc}
+          contactRef={contactLoc}
+          projectsRef={projectsLoc}
+        />
       </div>
     </div>
   );
