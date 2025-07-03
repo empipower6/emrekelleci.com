@@ -37,7 +37,7 @@ const Menu = ({ aboutRef, expRef, contactRef, projectsRef }: Props) => {
         >
           Contact Me
         </button>
-        <button
+        {/* <button
           onClick={() => {
             projectsRef &&
               projectsRef.current.scrollIntoView({ behavior: "smooth" });
@@ -45,7 +45,7 @@ const Menu = ({ aboutRef, expRef, contactRef, projectsRef }: Props) => {
           className={styles.menuItem}
         >
           Projects
-        </button>
+        </button> */}
       </div>
     </div>
   );

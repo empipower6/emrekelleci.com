@@ -45,12 +45,8 @@ const config: GatsbyConfig = {
         delayOnRouteUpdate: 0,
       },
     },
-  },{
-    resolve: `gatsby-source-instagram-all`,
-    options: {
-      access_token: process.env.INSTA_ACCESS_TOKEN,
-    }
-}]
+  }
+]
 };
 
 export default config;
